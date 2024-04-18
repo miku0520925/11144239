@@ -2,79 +2,108 @@
     font-family: 標楷體;
     padding: 0;
     margin: 0;
+    color:#1d3557;
 }
+
 /*開頭*/
 header {
-    background-image: url("/img/head.jpeg");
+    background-color: #e0b1cb;
     background-size: cover; 
     background-position: center; 
     height: 300px;
-    display: flex; /* 使用 Flexbox 布局 */
-    align-items: center; /* 垂直居中对齐内容 */
-    justify-content: space-between; /* 水平方向上平均分配空间 */
-    padding: 0 20px; /* 添加左右内边距 */
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 20px;
 }
 
 .me {
-    display: flex; /* 使用 Flexbox 布局 */
-    align-items: center; /* 垂直居中对齐内容 */
+    display: flex;
+    align-items: center;
 }
 
 .me img {
-    width: 250px; /* 设置图片宽度为 250px */
-    height: auto; /* 根据宽度自动调整高度 */
-    margin-right: 20px; /* 添加右边距 */
+    width: 250px; 
+    height: auto; 
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 5px solid #9f86c0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #e0b1cb;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
 }
 
 .choice {
-    display: flex; /* 使用 Flexbox 布局 */
-    align-items: center; /* 垂直居中对齐内容 */
-    font-size: 45px;
+    display: flex;
+    flex-direction: column;
 }
-
+.choice h1{
+    text-align: center;
+    font-size: 40px;
+}
 .choice ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex; /* 使用 Flexbox 布局 */
+    display: flex;
+    flex-direction: row;
+    font-family: 標楷體;
 }
 
 .choice li {
-    margin-right: 10px; /* spacing between list items */
+    margin-right: 20px; 
+    font-family: 標楷體;
 }
 
 .choice li:last-child {
-    margin-right: 0; /* 去除最后一个列表项的右边距 */
+    margin-right: 0;
+}
+
+.choice li a {
+    text-decoration: none;
+    color: #1d3557;
+    font-size: 35px; 
 }
 /*body*/
 body{
-    background: linear-gradient(to bottom right, #ffe5ec, #ffb3c6);
+    background-image: linear-gradient(to bottom,  #ffc6ff,#f49cbb);
 }
 /*part1*/
 .part1 {
     display: flex;
-    flex-direction: column; /* 设置为垂直布局 */
-    align-items: center; /* 垂直居中对齐 */
-    text-align: center; /* 文字居中对齐 */
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
 
 }
 
 .part1 .inword {
-    display: flex; /* 设置为水平布局 */
-    align-items: center; /* 垂直居中对齐 */
-    margin-bottom: 20px; /* 间距 */
+    display: flex; /
+    align-items: center; 
+    margin-bottom: 20px;
     color:#1d3557;
 }
 
 .part1 .inword h1,
 .part1 .inword h2 {
-    margin: 0; /* 清除默认外边距 */
+    margin: 0; 
 }
 
 .part1 .inword img {
     width: 350px;
     height: 450px;
-    margin-right: 20px; /* 图片右侧间距 */
+    margin-right: 20px;
+    border-radius: 20%;
+    border: 5px solid #9f86c0;
 }
 .part1 .inword h1 {
     color:#1d3557;
@@ -83,6 +112,10 @@ body{
 
 .part1 .inword h2 {
     font-size: 35px; /* 设置副标题文字大小为 38 像素 */
+    color:#1d3557;
+}
+.part1 .inword h3 {
+    font-size: 33px; /* 设置副标题文字大小为 38 像素 */
     color:#1d3557;
 }
 
@@ -109,44 +142,105 @@ body{
     padding: 5px; /* 调整文字边框内边距 */
 }
 /*part2*/
-.circle {
+@if $enable-transitions {
+    @keyframes progress-bar-stripes {
+      0% { background-position-x: $progress-height; }
+    }
+  }
+  .part2 h1 {
+    text-align: center;
+  }
+  
+  .progress-list {
+    margin-top: 20px;
+  }
+  
+  .part2 {
+    text-align: center;
+  }
+  
+  .part2 .line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .progress {
     position: relative;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: var(--body-bg-color); /* 使用 CSS 变量引用 body 的背景颜色 */
-}
-
-.circle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+    width: 40%;
+    height: 20px;
+    margin-bottom: 20px;
+  }
+  .line h2{
+    font-size: 20px;
+  }
+  
+  .progress .progress-bar {
     width: 100%;
     height: 100%;
-    background-color: #fff; /* 设置填充部分的背景颜色为白色 */
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform-origin: top;
-    transform: rotate(var(--fill-degree, 0deg));
-    transition: transform 2s; /* 添加过渡效果 */
+  }
+  
+/*part3*/
+.part3 .lifes img {
+    width: 350px;
+    height: 450px;
 }
 
-
-.circle-fill {
-    position: absolute; /* 让填充元素相对于父元素绝对定位 */
-    width: 100%; /* 设置填充元素的宽度为100%，以便在圆形内部填充 */
-    height: 100%; /* 设置填充元素的高度为100%，以便在圆形内部填充 */
-    overflow: hidden;
+.part3 .lifes h3 {
+    text-align: center;
+    font-size: 30px;
 }
 
-.circle-fill::before {
-    content: '';
-    position: absolute;
-    width: 100%; /* 设置填充程度为100% */
-    height: 100%; /* 设置填充程度为100% */
-    background-color: #fff; /* 将填充部分的颜色设置为白色 */
+.part3 h1 {
+    text-align: center;
+    font-size: 40px;
 }
+.part3 .lifes {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.part3 .lifes .school,
+.part3 .lifes .works {
+    display: flex;
+    align-items: center;
+}
+
+.part3 .lifes .club {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse; /* 右侧排列 */
+}
+
+.part3 .lifes .school img,
+.part3 .lifes .works img,
+.part3 .lifes .club img {
+    width: 350px;
+    height: 450px;
+    margin-right: 20px;
+}
+
+.part3 .lifes .school .schw,
+.part3 .lifes .works .workw,
+.part3 .lifes .club .clubw {
+    max-width: 350px; /* 控制文字區域最大寬度 */
+}
+
+.part3 .lifes .school .schw h2,
+.part3 .lifes .works .workw h2,
+.part3 .lifes .club .clubw h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.part3 .lifes .school .schw h3,
+.part3 .lifes .works .workw h3,
+.part3 .lifes .club .clubw h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
 /*part4*/
 .part4 {
     margin: 0 auto; 
@@ -156,8 +250,8 @@ body{
     font-size: 35px;
 }
 .part4 img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 30%; 
     margin-right: 20px;
 
