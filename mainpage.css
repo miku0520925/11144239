@@ -4,41 +4,153 @@
     margin: 0;
 }
 /*開頭*/
-header{
-    background-color: #ffcad4;
-}
-.self {
-    position: relative;
+header {
+    background-image: url("/img/head.jpeg");
+    background-size: cover; 
+    background-position: center; 
+    height: 300px;
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直居中对齐内容 */
+    justify-content: space-between; /* 水平方向上平均分配空间 */
+    padding: 0 20px; /* 添加左右内边距 */
 }
 
 .me {
-    position: relative;
-    display: inline-block;
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直居中对齐内容 */
+}
+
+.me img {
+    width: 250px; /* 设置图片宽度为 250px */
+    height: auto; /* 根据宽度自动调整高度 */
+    margin-right: 20px; /* 添加右边距 */
 }
 
 .choice {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.5); /* semi-transparent white background */
-    padding: 10px; /* adjust as needed */
-    border-radius: 5px;
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直居中对齐内容 */
+    font-size: 45px;
 }
 
 .choice ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* display list items in a row */
+    display: flex; /* 使用 Flexbox 布局 */
 }
 
 .choice li {
     margin-right: 10px; /* spacing between list items */
 }
+
+.choice li:last-child {
+    margin-right: 0; /* 去除最后一个列表项的右边距 */
+}
+/*body*/
+body{
+    background: linear-gradient(to bottom right, #ffe5ec, #ffb3c6);
+}
+/*part1*/
+.part1 {
+    display: flex;
+    flex-direction: column; /* 设置为垂直布局 */
+    align-items: center; /* 垂直居中对齐 */
+    text-align: center; /* 文字居中对齐 */
+
+}
+
+.part1 .inword {
+    display: flex; /* 设置为水平布局 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 20px; /* 间距 */
+    color:#1d3557;
+}
+
+.part1 .inword h1,
+.part1 .inword h2 {
+    margin: 0; /* 清除默认外边距 */
+}
+
+.part1 .inword img {
+    width: 350px;
+    height: 450px;
+    margin-right: 20px; /* 图片右侧间距 */
+}
+.part1 .inword h1 {
+    color:#1d3557;
+    font-size: 40px;
+}
+
+.part1 .inword h2 {
+    font-size: 35px; /* 设置副标题文字大小为 38 像素 */
+    color:#1d3557;
+}
+
+.part1 .inword .ulli {
+    font-size: 35px; /* 设置 ul 元素的文字大小为 35 像素 */
+}
+
+.part1 .inword ul li {
+    font-size: 30px; /* 设置 li 元素的文字大小为 30 像素 */
+}
+.inword .ulli ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    justify-content: center; /* 水平居中对齐 */
+}
+
+.inword .ulli ul li {
+    margin-right: 20px; /* 调整项目之间的间距 */
+    display: flex;
+    align-items: center;
+    border: 2px solid black; /* 添加文字边框，可以根据需要更改颜色 */
+    padding: 5px; /* 调整文字边框内边距 */
+}
+/*part2*/
+.circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--body-bg-color); /* 使用 CSS 变量引用 body 的背景颜色 */
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* 设置填充部分的背景颜色为白色 */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: top;
+    transform: rotate(var(--fill-degree, 0deg));
+    transition: transform 2s; /* 添加过渡效果 */
+}
+
+
+.circle-fill {
+    position: absolute; /* 让填充元素相对于父元素绝对定位 */
+    width: 100%; /* 设置填充元素的宽度为100%，以便在圆形内部填充 */
+    height: 100%; /* 设置填充元素的高度为100%，以便在圆形内部填充 */
+    overflow: hidden;
+}
+
+.circle-fill::before {
+    content: '';
+    position: absolute;
+    width: 100%; /* 设置填充程度为100% */
+    height: 100%; /* 设置填充程度为100% */
+    background-color: #fff; /* 将填充部分的颜色设置为白色 */
+}
 /*part4*/
 .part4 {
     margin: 0 auto; 
-    background-color: #f4acb7;
+    
     text-align: center;
     color:#1d3557;
     font-size: 35px;
