@@ -2,7 +2,7 @@
     font-family: 標楷體;
     padding: 0;
     margin: 0;
-    color:#1d3557;
+
 
 }
 
@@ -17,6 +17,7 @@ header {
     justify-content: space-between; 
     padding: 0 20px;
     text-align: center;
+
 }
 
 .me {
@@ -32,13 +33,6 @@ header {
     border: 5px solid #9f86c0;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #e0b1cb;
-}
 
 .logo img {
     width: 100px;
@@ -60,6 +54,7 @@ header {
     display: flex;
     flex-direction: row;
     font-family: 標楷體;
+    color: #669bbc;
 }
 
 .choice li {
@@ -73,7 +68,7 @@ header {
 
 .choice li a {
     text-decoration: none;
-    color: #1d3557;
+    color: #669bbc;
     font-size: 35px; 
 }
 /*body*/
