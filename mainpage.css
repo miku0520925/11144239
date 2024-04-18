@@ -19,7 +19,11 @@ header {
     text-align: center;
 
 }
-
+/*變色按鍵*/
+.choice li a:hover {
+    color: #3a86ff; 
+    background-color: #ffafcc; 
+}
 .me {
     display: flex;
     align-items: center;
@@ -144,6 +148,7 @@ body{
     padding: 5px; 
 }
 /*part2*/
+/*動畫進度條*/
 @if $enable-transitions {
     @keyframes progress-bar-stripes {
       0% { background-position-x: $progress-height; }
